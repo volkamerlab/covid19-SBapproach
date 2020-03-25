@@ -11,26 +11,26 @@ This is part of a community effort to rapidly find new hits to target the virus 
 ### Pipeline
 
 1. Input molecules
-  A. Approved drugs 
-  B. SARS-CoV-2 focused ChEMBL subset (probably protease centered)
-  C. Fragments from DiamondX
-      * Non-covalent hits in the active site
-  D. Current postera submissions
-      * Covalently-bound hits in the active site
-2. Docking and Growing
-  A. Docking
-      * (Maybe use fragments to filter down compounds)
-      * Docked compounds to target, tool tbd
-  B. Growing
+    * Approved drugs 
+    * SARS-CoV-2 focused ChEMBL subset (probably protease centered)
+    * Fragments from DiamondX
+        * Non-covalent hits in the active site
+    * Current postera submissions
+        * Covalently-bound hits in the active site
+2. Two Approaches: Docking and Growing
+    * Docking
+       * (Maybe use fragments to filter down compounds)
+       * Docked compounds to target, tool tbd
+    * Growing
       * SeeSAR for DiamondX fragment growing
 3. Collect best compounds from both apporaches
-  A. Select diverse subset
-  B. Cross-check with postera submissions
-  C. Selection of 20 candidates
+    * Select diverse subset
+    * Cross-check with postera submissions
+    * Selection of 20 candidates
 4. Explore available compounds in REAL space (Availability by Enamine)
-  A. InfiniSee search in REALspace   
+    * InfiniSee search in REALspace   
 5. Reevaluate promising compounds
-  A. Docking and clustering
-  B. MD simulations
+    * Docking and clustering
+    * MD simulations
   
     
