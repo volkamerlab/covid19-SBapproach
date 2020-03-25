@@ -12,7 +12,10 @@ This is part of a community effort to rapidly find new hits to target the virus 
 
 1. Input molecules
     * Approved drugs 
+        * (All)
+        * Protease inhibitors (taken from http://dx.doi.org/10.17179/excli2020-1189)
     * SARS-CoV-2 focused ChEMBL subset (probably protease centered)
+        * (import and describe work by Dominique https://github.com/dominiquesydow/covid19)
     * Fragments from DiamondX
         * Non-covalent hits in the active site
         * Covalently-bound hits in the active site
@@ -20,7 +23,7 @@ This is part of a community effort to rapidly find new hits to target the virus 
 2. Two Approaches: Docking and Growing
     * Docking
        * (Maybe use fragments to filter down compounds)
-       * Docked compounds to target, tool tbd
+       * Docked compounds to target, tool (tbd e.g. smina and others)
     * Growing
       * SeeSAR for DiamondX fragment growing
 3. Collect best compounds from both apporaches
