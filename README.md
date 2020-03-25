@@ -15,8 +15,8 @@ This is part of a community effort to rapidly find new hits to target the virus 
     * SARS-CoV-2 focused ChEMBL subset (probably protease centered)
     * Fragments from DiamondX
         * Non-covalent hits in the active site
-    * Current postera submissions
         * Covalently-bound hits in the active site
+    * Current postera (https://covid.postera.ai/covid) submissions
 2. Two Approaches: Docking and Growing
     * Docking
        * (Maybe use fragments to filter down compounds)
