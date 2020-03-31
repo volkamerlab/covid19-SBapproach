@@ -1,5 +1,5 @@
 ## Fight SARS-CoV-2 strategy for postera contribution (started 25.03.2020)
-powered by: Yonghui Chen, Dominique Sydow, Andrea Volkamer (andrea.volkamer@charite.de)
+powered by: Yonghui Chen, Dominique Sydow, Jaime Rodríguez-Guerra, Andrea Volkamer (andrea.volkamer@charite.de)
 
 This is part of a community effort to rapidly find new hits to target the virus main protease.
 
@@ -12,17 +12,17 @@ This is part of a community effort to rapidly find new hits to target the virus 
 
 1. Collect input molecules for screening pipeline
     * Approved drugs 
-        * (All)
+        * [TODO] All
         * Protease inhibitors (taken from http://dx.doi.org/10.17179/excli2020-1189)
     * SARS-CoV-2 focused ChEMBL subset (probably protease centered)
-        * (import and describe work by Dominique https://github.com/dominiquesydow/covid19)
-    * [TODO] Fragments from DiamondX
+        * Binding site comparison based, generated [here](https://github.com/volkamerlab/covid19-SBapproach/tree/master/notebooks/focused_library_similar_proteins)
+    * Fragments from DiamondX
         * Non-covalent hits in the active site
         * Covalently-bound hits in the active site
     * Current [postera](https://covid.postera.ai/covid) submissions
 2. Two Approaches for complex generation: Docking and Growing
     * Docking
-       * [TODO] Maybe use fragments to filter down compounds
+       * Can use fragments to filter down compounds  
        * Dock selected compounds to target ensemble using smina
        * See [Pipeline](https://github.com/volkamerlab/covid19-SBapproach/tree/master/notebooks/Docking).
     * [TODO] Growing
