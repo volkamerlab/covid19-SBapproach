@@ -79,7 +79,7 @@ This is part of a community effort to rapidly find new hits to target the virus 
     * Reevaluate proposed hits
         * Docking
     * Submission
-  3. [TODO] Growing approach: Start from DiamondX fragments
+3. [TODO] Growing approach: Start from DiamondX fragments
     * Screening data: DiamondX fragments
     * Grow fragments
     * Search for most similar compounds in Enamine REAL space
