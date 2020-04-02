@@ -8,33 +8,84 @@ This is part of a community effort to rapidly find new hits to target the virus 
 * https://covid.postera.ai/covid
 * https://www.diamond.ac.uk/covid-19/for-scientists/Main-protease-structure-and-XChem/Downloads.html
 
-### Pipeline
+### Available data and methods
 
-1. Collect input molecules for screening pipeline
-    * Approved drugs 
+1. Input data: Collected input molecules for screening pipeline
+    * Approved drugs
         * [TODO] All
-        * Protease inhibitors (taken from http://dx.doi.org/10.17179/excli2020-1189)
-    * SARS-CoV-2 focused ChEMBL subset (probably protease centered)
-        * Binding site comparison based, generated [here](https://github.com/volkamerlab/covid19-SBapproach/tree/master/notebooks/focused_library_similar_proteins)
-    * Fragments from DiamondX
-        * Non-covalent hits in the active site
-        * Covalently-bound hits in the active site
-    * Current [postera](https://covid.postera.ai/covid) submissions
-2. Two Approaches for complex generation: Docking and Growing
+        * Example data set: [Protease inhibitors](https://github.com/volkamerlab/covid19-SBapproach/blob/master/data/proteaseFDAdrugs.csv) (taken from http://dx.doi.org/10.17179/excli2020-1189)
+    * SARS-CoV-2 focused ChEMBL subset
+        * Binding site comparison based, available [here](https://github.com/volkamerlab/covid19-SBapproach/tree/master/data/focused_library_similar_proteins)
+    * Fragments from [DiamondX](https://www.diamond.ac.uk/covid-19/for-scientists/Main-protease-structure-and-XChem/Downloads.html)
+        * [Non-covalent hits](https://github.com/volkamerlab/covid19-SBapproach/blob/master/data/fragments/non_covalent_fragments_2D.sdf) in the active site
+        * [Covalently-bound hits](https://github.com/volkamerlab/covid19-SBapproach/blob/master/data/fragments/covalent_fragments_2D.sdf) in the active site
+    * Current [postera](https://covid.postera.ai/covid) submissions, available [here](https://github.com/volkamerlab/covid19-SBapproach/blob/master/data/covid_submissions_03_24_2020.xlsx)
+2. Available methods for pipeline
+    * Focused compound library design
+        * Protease binding site definition
+        * Structure-based binding site comparison using [ProBis](http://probis.cmm.ki.si/)
+        * Querying ligands from ChEMBL known to bind to these similar proteins
+        * More info available [here](https://github.com/volkamerlab/covid19-SBapproach/tree/master/notebooks/focused_library_similar_proteins)
+    * Compound preprocessing and filtering
+        * Generate 3D conformations
+        * Filter by similarity to fragments
+        * [TODO] Select divers subset
+        * [TODO] others
     * Docking
-       * Can use fragments to filter down compounds  
        * Dock selected compounds to target ensemble using smina
        * See [Pipeline](https://github.com/volkamerlab/covid19-SBapproach/tree/master/notebooks/Docking).
     * [TODO] Growing
       * SeeSAR for DiamondX fragment growing
-3. [TODO] Collect best compounds from both apporaches
-    * Select diverse subset
-    * Cross-check with postera submissions
-    * Selection of ~20 candidates
-4. [TODO] Explore available compounds in REAL space (Availability by Enamine)
-    * InfiniSee search in REALspace   
-5. [TODO] Reevaluate promising compounds
-    * Docking and clustering
-    * MD simulations or use [covid moonshot pipeline] (https://github.com/FoldingAtHome/covid-moonshot)
-  
-    
+    * [TODO] Explore available compounds in REAL space (Availability by Enamine)
+        * InfiniSee search using FTrees in REALspace
+    * [Skip for now] MD simulations to verify docking results
+        * or use [covid moonshot pipeline](https://github.com/FoldingAtHome/covid-moonshot)
+
+### Proposed pipelines (one per submission)
+
+1. [Trial case to set up pipeline]: Known protease inhibitors
+    * Screening data: Protease inhibitors
+        * Fragment MCS: only use compounds which contain at least (a decent part of) one fragment
+            * Non-covalent fragments used
+        * Preprocess molceules
+            * Generate 3D
+    * Perform docking
+        * Ensemble method
+        * Select most promising compounds
+    * [TODO] Search for most similar compounds in Enamine REAL space
+        * Using InfiniSee Software
+        * Postprocessing (here or later):
+            * Select diverse subset
+            * Cross-check with postera submissions
+            * Selection of ~20 candidates
+    * [TODO] Reevaluate proposed hits
+        * Docking
+    * [TODO] Submission
+2. [TODO] Docking Approach: Start from focused ChEMBL library
+    * Screening data: Protease inhibitors
+        * Fragment MCS: only use compounds which contain at least (a decent part of) one fragment
+            * Non-covalent fragments used
+        * Preprocess molceules
+            * Generate 3D
+    * Perform docking
+        * Ensemble method
+        * Select most promising compounds
+    * Search for most similar compounds in Enamine REAL space
+        * Using InfiniSee Software
+    * Postprocessing (here or later):
+        * Select diverse subset
+        * Cross-check with postera submissions
+        * Selection of ~20 candidates
+    * Reevaluate proposed hits
+        * Docking
+    * Submission
+3. [TODO] Growing approach: Start from DiamondX fragments
+    * Screening data: DiamondX fragments
+    * Grow fragments
+    * Search for most similar compounds in Enamine REAL space
+        * Using InfiniSee Software
+    * Postprocessing (here or later):
+        * as above
+    * Reevaluate proposed hits
+        * Docking
+    * Submission
