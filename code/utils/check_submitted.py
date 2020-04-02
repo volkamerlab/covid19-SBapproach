@@ -114,7 +114,7 @@ def main():
     args = parse_cli()
     if args.compounds.endswith(".sdf"):
         print("Building from SDF...")
-        my_compounds = Molecule.from_file(args.compounds)
+        my_compounds = Molecule.from_file(args.compounds, allow_undefined_stereo=True)
     else:
         my_compounds = smiles_from_txt(args.compounds)
     already_submitted = currently_submitted()
