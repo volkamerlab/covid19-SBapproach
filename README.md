@@ -1,18 +1,21 @@
-## Fight SARS-CoV-2 strategy for postera contribution (started 25.03.2020)
-powered by: Yonghui Chen, Dominique Sydow, Jaime Rodríguez-Guerra, Andrea Volkamer (andrea.volkamer@charite.de)
+# Fight SARS-CoV-2 strategy for postera contribution (started 25.03.2020)
+
+_Powered by: Yonghui Chen, Dominique Sydow, Jaime Rodríguez-Guerra, Andrea Volkamer (`<andrea.volkamer@charite.de>`)_
 
 This is part of a community effort to rapidly find new hits to target the virus main protease.
 
-### Background
+## Background
 The COVID-19 (coronavirus disease 2019) pandemic, caused by severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) has become a global health emergency. With no current evidence for specific antiviral treatment, there is an urgent need for effective anti-COVID drugs ([more about potential drugs and clinical trials in the COVID-10 Science Report: Therapeutics](https://sph.nus.edu.sg/wp-content/uploads/2020/03/COVID-19-Science-Report-Therapeutics-30-Mar.pdf)). A promising target is the main protease M<sup>pro</sup> of SARS-CoV-2 for which the first [crystal structure](http://www.rcsb.org/structure/6LU7) has been determined in January 2020.  
 [UK’s Diamond Light Source](https://www.diamond.ac.uk/covid-19/for-scientists/Main-protease-structure-and-XChem/Downloads.html) performed a large crystal based fragment screen on M<sup>pro</sup>. In collaboration with [PostEra](https://covid.postera.ai/covid) and others, they encourage researchers from around the world to use their fragment hits as a starting point and contribute, amongst others, by suggesting potential inhibitors. 
 
 References:
 
-* Jin, Zhenming, <i>et al.</i> "Structure-based drug design, virtual screening and high-throughput screening rapidly identify antiviral leads targeting COVID-19." bioRxiv (2020).
-* Zhang, Linlin, <i>et al.</i> "Crystal structure of SARS-CoV-2 main protease provides a basis for design of improved α-ketoamide inhibitors." Science (2020).
-* Lai, Chih-Cheng, <i>et al.</i> "Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) and corona virus disease-2019 (COVID-19): the epidemic and the challenges." International journal of antimicrobial agents (2020): 105924.
-### Available data and methods
+* Jin, Zhenming, _et al._ "Structure-based drug design, virtual screening and high-throughput screening rapidly identify antiviral leads targeting COVID-19." bioRxiv (2020). [DOI: `10.1101/2020.02.26.964882`](https://www.biorxiv.org/content/10.1101/2020.02.26.964882v1)
+* Zhang, Linlin, _et al._ "Crystal structure of SARS-CoV-2 main protease provides a basis for design of improved α-ketoamide inhibitors." Science (2020). [DOI: `10.1126/science.abb3405`](https://science.sciencemag.org/content/early/2020/03/20/science.abb3405)
+* Lai, Chih-Cheng, _et al._ "Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) and corona virus disease-2019 (COVID-19): the epidemic and the challenges." International journal of antimicrobial agents (2020): 105924. [DOI: `10.1016/j.ijantimicag.2020.105924`](https://www.sciencedirect.com/science/article/pii/S0924857920300674?via%3Dihub)
+
+
+## Available data and methods
 <!-- AV: Clear when done. -->
 <!-- JRG: Summarize in # Resources -->
 
@@ -47,7 +50,7 @@ References:
     * [Skip for now] MD simulations to verify docking results
         * or use [covid moonshot pipeline](https://github.com/FoldingAtHome/covid-moonshot)
 
-### Proposed pipelines (one per submission)
+## Proposed pipelines (one per submission)
 <!-- AV: Clear when done. -->
 
 1. [Trial case to set up pipeline]: Known protease inhibitors
