@@ -5,6 +5,8 @@ Fragment growing using [SeeSAR](https://www.biosolveit.de/SeeSAR/) software
 First, a fragment will be selected and second it will be grown. 
 Next, the pipeline as described before will be evoked to find similar compounds ready to be synthesized in Enamine REAL space and post-processed (depending on number of hits).
 
+![alt text](img/x0967_surf.png "Mpro-x0967")
+
 ### Pipeline
 
 1. Fragment choice
@@ -22,8 +24,8 @@ Next, the pipeline as described before will be evoked to find similar compounds 
         * [Recore index](https://www.biosolveit.de/SeeSAR/recore-indices/) (based on ZINC) is used for fragment growing
     * Growing based on selecting one bond to cut
         * Inspirations for growing the Bromide tail tried
-            * cut at between NH and C=O bond
-            * cut after NH
+            * cut at between NH and C=O bond: ![alt text](img/growing_cut1.png "cut 1")
+            * cut after NH: ![alt text](img/growing_cut2.png "cut 2")
         * [5 top molecules](result_data/x0967_seesar_inspirations_top5.sdf) created with a lower estimated affinity (Note [top 20](result_data/x0967_seesar_inspirations_top5.sdf) also available)
 
 3. [TODO] find most similar compounds within Enamine REAL using Ftrees
