@@ -79,4 +79,11 @@ Final selection:
 
 *  It's shown that the 7 recommended compounds fit in the binding site.
 
+### Step 4 
+
+Find most similar compounds within Enamine REAL using Ftrees
+
+* 7 top [molecules](A-focused_library_docking_screening_pipeline\result_data\docking_recommend_7_3D.sdf) itself are used as input
+* A maximum of 100 new compounds per molecule generated as shown [here](A-focused_library_docking_screening_pipeline\ftrees_for_top7_docking_compounds_and_combine_data.ipynb)
+* Resulting [700 molecules](A-focused_library_docking_screening_pipeline\result_data\sminadocking_top7_out_enamineREAL_combined.sdf)
 
