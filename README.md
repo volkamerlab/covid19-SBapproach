@@ -34,7 +34,7 @@ References:
         * Protease binding site definition
         * Structure-based binding site comparison using [ProBis](http://probis.cmm.ki.si/)
         * Querying ligands from ChEMBL known to bind to these similar proteins
-        * More info available [here](https://github.com/volkamerlab/covid19-SBapproach/tree/master/notebooks/focused_library_similar_proteins)
+        * More info available [here](https://github.com/volkamerlab/covid19-SBapproach/tree/master/code/focused_library_similar_proteins)
     * Compound preprocessing and filtering
         * Generate 3D conformations
         * Filter by similarity to fragments
@@ -82,7 +82,7 @@ References:
         * Select most promising compounds
     * Search for most similar compounds in Enamine REAL space
         * Using InfiniSee Software; yielded 700 compounds
-    * Postprocessing (here or later):
+    * Postprocessing:
         * Cross-check with postera submissions
         * Select diverse subset: 100 compounds (Butina clustering with distance cutoff 0.48, select centroids of 100 largest clusters)
         * Selection of ~20 candidates
@@ -94,7 +94,7 @@ References:
     * Grow fragments
     * Search for most similar compounds in Enamine REAL space
         * Using InfiniSee Software; yielded 600 compounds
-    * Postprocessing (here or later):
+    * Postprocessing:
         * Cross-check with postera submissions
         * Select diverse subset: 100 compounds (Butina clustering with distance cutoff 0.3, select centroids of 100 largest clusters)
         * Selection of ~20 candidates
