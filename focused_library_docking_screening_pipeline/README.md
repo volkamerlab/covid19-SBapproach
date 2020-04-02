@@ -57,5 +57,16 @@ Finally, the docking-based screening will be applied to the filtered library (Se
      *  The pose of the top 1 comppound, "CHEMBL2059095", in structure "Mpro-x0946":
             ![alt text](img/docking_pose_top1.png "docking_pose_top1")
             It's indicated there is a hydrogen bond between the carbonly of GLN189 and the NH of uramino in small molecule.  
-
+     * Finally picking
+            
+            Because of the similarity of the compounds, we go through the top 30 compounds and cluster the structures of the compounds manually. For per cluster, the best-scoring compound will be kept.
+            
+            Finally, we got 7 compounds which recommened to be hit compounds:
+            ![alt text](img/recommend_top7.png "recommend_top7")
+            
+            The poses of the recommened top 7 compounds in structure "Mpro-x0946":
+            ![alt text](img/recommend_top7_poses.png "recommend_top7_poses")
+            
+            It's shown that the 7 recommended compounds locate in the binding site. 
+      
 
