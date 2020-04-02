@@ -2,7 +2,7 @@
 
 Fragment growing using [SeeSAR](https://www.biosolveit.de/SeeSAR/) software
 
-First a fragment will selected and second it will be grown. 
+First, a fragment will be selected and second it will be grown. 
 Next, the pipeline as described before will be evoked to find similar compounds ready to be synthesized in Enamine REAL space and post-processed (depending on number of hits).
 
 ### Pipeline
@@ -24,13 +24,18 @@ Next, the pipeline as described before will be evoked to find similar compounds 
         * Inspirations for growing the Bromide tail tried
             * cut at between NH and C=O bond
             * cut after NH
-        * [5 top molecules](result_data/x0967_seesar_inspirations_top5.sdf) created with a lower estimated affinity (see file ...._seesar_inspirations)
+        * [5 top molecules](result_data/x0967_seesar_inspirations_top5.sdf) created with a lower estimated affinity (Note [top 20](result_data/x0967_seesar_inspirations_top5.sdf) also available)
 
 3. [TODO] find most similar compounds within Enamine REAL using Ftrees
     * [5 top molecules](result_data/x0967_seesar_inspirations_top5.sdf) used as input
     * A maximum of 100 new compounds per molecule generated 
-    
+
 4. [TODO] Postprocessing
+    * Check for duplicates in current submissions
+    * (Re)dock new molecules
+    * Cluster results
+    
+5. [TODO] Final selection of ~ 5 compounds
 
 
 
