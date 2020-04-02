@@ -7,11 +7,11 @@ Finally, the docking-based screening was applied to the filtered library (see [h
 
 ## Pipeline
 
-### Step 1
+### Step 1 [scripts](https://github.com/volkamerlab/covid19-SBapproach/tree/master/code/focused_library_similar_proteins)
 
 Generate the SARS-CoV-2 focused ChEMBL library. It contains 4121 compounds and can be found [here](https://github.com/volkamerlab/covid19-SBapproach/tree/master/data/focused_library_similar_proteins/focused_library.csv).
 
-### Step 2
+### Step 2 [scripts](https://github.com/volkamerlab/covid19-SBapproach/tree/master/code/focused_library_similar_proteins)
 
 Filter the focused library with the MCS fragment strategy.
 
@@ -52,7 +52,7 @@ Filter the focused library with the MCS fragment strategy.
         For this pipeline, we chose structures `Mpro-x0387`, `Mpro-x0946` and `Mpro-x0967`.
         ![alt text](img/receptor_structures.png "receptor_structures")
 
-### Step 3
+### Step 3 [scripts](https://github.com/volkamerlab/covid19-SBapproach/tree/master/code/docking)
 
 Molecular docking screening with [`smina`](https://sourceforge.net/projects/smina/).
 
