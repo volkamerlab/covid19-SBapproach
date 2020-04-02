@@ -11,7 +11,7 @@ This is part of a community effort to rapidly find new hits to target the virus 
 ### Available data and methods
 
 1. Input data: Collected input molecules for screening pipeline
-    * Approved drugs 
+    * Approved drugs
         * [TODO] All
         * Example data set: [Protease inhibitors](https://github.com/volkamerlab/covid19-SBapproach/blob/master/data/proteaseFDAdrugs.csv) (taken from http://dx.doi.org/10.17179/excli2020-1189)
     * SARS-CoV-2 focused ChEMBL subset
@@ -31,24 +31,24 @@ This is part of a community effort to rapidly find new hits to target the virus 
         * Filter by similarity to fragments
         * [TODO] Select divers subset
         * [TODO] others
-    * Docking 
+    * Docking
        * Dock selected compounds to target ensemble using smina
        * See [Pipeline](https://github.com/volkamerlab/covid19-SBapproach/tree/master/notebooks/Docking).
     * [TODO] Growing
       * SeeSAR for DiamondX fragment growing
     * [TODO] Explore available compounds in REAL space (Availability by Enamine)
-        * InfiniSee search using FTrees in REALspace   
+        * InfiniSee search using FTrees in REALspace
     * [Skip for now] MD simulations to verify docking results
-        * or use [covid moonshot pipeline] (https://github.com/FoldingAtHome/covid-moonshot)
+        * or use [covid moonshot pipeline](https://github.com/FoldingAtHome/covid-moonshot)
 
 ### Proposed pipelines (one per submission)
 
 1. [Trial case to set up pipeline]: Known protease inhibitors
     * Screening data: Protease inhibitors
         * Fragment MCS: only use compounds which contain at least (a decent part of) one fragment
-            * Non-covalent fragments used 
+            * Non-covalent fragments used
         * Preprocess molceules
-            * Generate 3D 
+            * Generate 3D
     * Perform docking
         * Ensemble method
         * Select most promising compounds
@@ -64,9 +64,9 @@ This is part of a community effort to rapidly find new hits to target the virus 
 2. [TODO] Docking Approach: Start from focused ChEMBL library
     * Screening data: Protease inhibitors
         * Fragment MCS: only use compounds which contain at least (a decent part of) one fragment
-            * Non-covalent fragments used 
+            * Non-covalent fragments used
         * Preprocess molceules
-            * Generate 3D 
+            * Generate 3D
     * Perform docking
         * Ensemble method
         * Select most promising compounds
@@ -88,4 +88,4 @@ This is part of a community effort to rapidly find new hits to target the virus 
         * as above
     * Reevaluate proposed hits
         * Docking
-    * Submission  
+    * Submission
