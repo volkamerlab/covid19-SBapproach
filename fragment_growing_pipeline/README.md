@@ -37,6 +37,11 @@ Next, the pipeline as described before will be evoked to find similar compounds 
     
 5. [TODO] Final selection of ~ 5 compounds
 
+6. [TODO] Collect info for submission
+    * Provide Smiles/structures
+    * Describe rationale
+    * Include fragment IDs
+
 
 
     
