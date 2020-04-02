@@ -38,13 +38,22 @@ Next, the pipeline as described before will be evoked to find similar compounds 
     * Check for duplicates in current submissions
     * Cluster results to select diverse set
     
-5. [TODO] Final selection of ~ 5 compounds
-    * (Re)dock final molecules
+5. Final selection of ~ 5 compounds
+    * Docking of selected [100 molecules] using SeeSAR to [**Mpro-x0967**](data\diamond_xchem_screen_mpro_all_pdbs\Mpro-x0967.pdb)(B-fragment_growing_pipeline\result_data\diverse_set_strategy_b_3D.sdf)
+    * Docking by template mode used (template: **Mpro-x0967**)
+    * 
 
-6. [TODO] Collect info for submission
-    * Provide Smiles/structures
-    * Describe rationale
-    * Include fragment IDs
+6. Collect info for submission
+    * Provide Smiles/structures: see [sdf file] [TODO]
+    * Describe rationale: 
+        Here a structure-based approach was used building on the complexes of different fragments bound against the virus main protease available from DiamondX.\
+        As starting point in this example fragment **Mpro-x0967** was chosen based on its size, its match in our focused library (see [strategy A](A-focused_library_docking_screening_pipeline\README.md)) and its good estimated affinity using [SeeSAR](https://www.biosolveit.de/SeeSAR/)) from BioSolveIT.
+        [SeeSAR](https://www.biosolveit.de/SeeSAR/) was then used for fragment growing the fragment choosing a bond towards the bromide tail.\
+        To guarantee synthetic accessibility, similar compounds within Enamine [REALspace](https://www.biosolveit.de/CoLibri/spaces.html#realspace) were searched using [FTrees](https://www.biosolveit.de/FTrees/). 
+        The found compounds (no duplicates in current postera submissions, 31.03.2020) were cluster to find a diverse subset an the remaining compounds were redocked using SeeSAR.
+        Based on the fit and the estimated binding affinity the final molecules were selected.
+
+    * Include fragment IDs: **Mpro-x0967**
 
 
 
