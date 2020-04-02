@@ -5,7 +5,7 @@ Fragment growing using [SeeSAR](https://www.biosolveit.de/SeeSAR/) software
 First, a fragment will be selected and second it will be grown. 
 Next, the pipeline as described before will be evoked to find similar compounds ready to be synthesized in Enamine REAL space and post-processed (depending on number of hits).
 
-![alt text](img/x0967_surf.png "Mpro-x0967"){width=30%}
+![alt text](img/x0967_surf.png "Mpro-x0967")
             
 
 ### Pipeline
@@ -26,19 +26,20 @@ Next, the pipeline as described before will be evoked to find similar compounds 
     * Growing based on selecting one bond to cut
         * Inspirations for growing the Bromide tail tried
             * cut at between NH and C=O bond: ![alt text](img/growing_cut1.PNG "cut 1"){width=15%}
-            * cut after NH: ![alt text](img/growing_cut2.PNG "cut 2"){width=15%}
+            * cut after NH: ![alt text](img/growing_cut2.PNG "cut 2")
         * [5 top molecules](result_data/x0967_seesar_inspirations_top5.sdf) created with a lower estimated affinity (Note [top 20](result_data/x0967_seesar_inspirations_top5.sdf) also available)
 
-3. [TODO] find most similar compounds within Enamine REAL using Ftrees
-    * [5 top molecules](result_data/x0967_seesar_inspirations_top5.sdf) used as input
-    * A maximum of 100 new compounds per molecule generated 
+3. Find most similar compounds within Enamine REAL using Ftrees
+    * [5 top molecules](result_data/x0967_seesar_inspirations_top5.sdf) and the initial fragment itself are used as input
+    * A maximum of 100 new compounds per molecule generated as shown [here](./ftrees_for_top5_compounds_and_combine_data.ipynb) 
+    * Resulting 600 [molecules](result_data/x0967_top5_inspirations_out_enamineREAL_combined.sdf)
 
 4. [TODO] Postprocessing
     * Check for duplicates in current submissions
-    * (Re)dock new molecules
-    * Cluster results
+    * Cluster results to select diverse set
     
 5. [TODO] Final selection of ~ 5 compounds
+    * (Re)dock final molecules
 
 6. [TODO] Collect info for submission
     * Provide Smiles/structures
