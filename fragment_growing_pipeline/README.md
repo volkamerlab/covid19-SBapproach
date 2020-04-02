@@ -5,7 +5,7 @@ Fragment growing using [SeeSAR](https://www.biosolveit.de/SeeSAR/) software
 First, a fragment will be selected and second it will be grown. 
 Next, the pipeline as described before will be evoked to find similar compounds ready to be synthesized in Enamine REAL space and post-processed (depending on number of hits).
 
-![alt text](img/x0967_surf.png "Mpro-x0967")
+![alt text](img/figure1.png "Mpro-x0967")
             
 
 ### Pipeline
