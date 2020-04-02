@@ -53,7 +53,7 @@ This is part of a community effort to rapidly find new hits to target the virus 
         * Ensemble method
         * Select most promising compounds
     * [TODO] Search for most similar compounds in Enamine REAL space
-        * Using InfiniSee Software; yielded 700 compounds
+        * Using InfiniSee Software
         * Postprocessing (here or later):
             * Cross-check with postera submissions
             * Select diverse subset
