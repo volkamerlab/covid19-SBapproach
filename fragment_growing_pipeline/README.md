@@ -25,8 +25,8 @@ Next, the pipeline as described before will be evoked to find similar compounds 
         * [Recore index](https://www.biosolveit.de/SeeSAR/recore-indices/) (based on ZINC) is used for fragment growing
     * Growing based on selecting one bond to cut
         * Inspirations for growing the Bromide tail tried
-            * cut at between NH and C=O bond: ![alt text](img/growing_cut1.PNG "cut 1"){width=15%}
-            * cut after NH: ![alt text](img/growing_cut2.PNG "cut 2")
+            * cut at between NH and C=O bond
+            * cut after NH
         * [5 top molecules](result_data/x0967_seesar_inspirations_top5.sdf) created with a lower estimated affinity (Note [top 20](result_data/x0967_seesar_inspirations_top5.sdf) also available)
 
 3. Find most similar compounds within Enamine REAL using Ftrees
