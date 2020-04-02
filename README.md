@@ -5,8 +5,8 @@ _Powered by: Yonghui Chen, Dominique Sydow, Jaime Rodríguez-Guerra, Andrea Volk
 This is part of a community effort to rapidly find new hits to target the virus main protease.
 
 ## Background
-The COVID-19 (coronavirus disease 2019) pandemic, caused by severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) has become a global health emergency. With no current evidence for specific antiviral treatment, there is an urgent need for effective anti-COVID drugs ([more about potential drugs and clinical trials in the COVID-10 Science Report: Therapeutics](https://sph.nus.edu.sg/wp-content/uploads/2020/03/COVID-19-Science-Report-Therapeutics-30-Mar.pdf)). A promising target is the main protease M<sup>pro</sup> of SARS-CoV-2 for which the first [crystal structure](http://www.rcsb.org/structure/6LU7) has been determined in January 2020.  
-[UK’s Diamond Light Source](https://www.diamond.ac.uk/covid-19/for-scientists/Main-protease-structure-and-XChem/Downloads.html) performed a large crystal based fragment screen on M<sup>pro</sup>. In collaboration with [PostEra](https://covid.postera.ai/covid) and others, they encourage researchers from around the world to use their fragment hits as a starting point and contribute, amongst others, by suggesting potential inhibitors. 
+The COVID-19 (coronavirus disease 2019) pandemic, caused by severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) has become a global health emergency. With no current evidence for specific antiviral treatment, there is an urgent need for effective anti-COVID drugs ([more about potential drugs and clinical trials in the COVID-19 Science Report: Therapeutics](https://sph.nus.edu.sg/wp-content/uploads/2020/03/COVID-19-Science-Report-Therapeutics-30-Mar.pdf)). A promising target is the main protease M<sup>pro</sup> of SARS-CoV-2 for which the first [crystal structure](http://www.rcsb.org/structure/6LU7) has been determined in January 2020.  
+[UK’s Diamond Light Source](https://www.diamond.ac.uk/covid-19/for-scientists/Main-protease-structure-and-XChem/Downloads.html) performed a large crystal-based fragment screen on M<sup>pro</sup>. In collaboration with [PostEra](https://covid.postera.ai/covid) and others, they encourage researchers from around the world to use their fragment hits as a starting point and contribute, amongst others, by suggesting potential inhibitors (effective and easy-to-make). 
 
 References:
 
@@ -50,57 +50,33 @@ References:
     * [Skip for now] MD simulations to verify docking results
         * or use [covid moonshot pipeline](https://github.com/FoldingAtHome/covid-moonshot)
 
-## Proposed pipelines (one per submission)
+## Proposed pipelines 
 <!-- AV: Clear when done. -->
 
-1. [Trial case to set up pipeline]: Known protease inhibitors
-    * Screening data: Protease inhibitors
-        * Fragment MCS: only use compounds which contain at least (a decent part of) one fragment
-            * Non-covalent fragments used
-        * Preprocess molceules
-            * Generate 3D
-    * Perform docking
-        * Ensemble method
-        * Select most promising compounds
-    * [TODO] Search for most similar compounds in Enamine REAL space
-        * Using InfiniSee Software
-        * Postprocessing (here or later):
-            * Cross-check with postera submissions
-            * Select diverse subset
-            * Selection of ~20 candidates
-    * [TODO] Reevaluate proposed hits
-        * Docking
-    * [TODO] Submission
-2. [TODO] Docking Approach: Start from focused ChEMBL library
-    * Screening data: Protease inhibitors
-        * Fragment MCS: only use compounds which contain at least (a decent part of) one fragment
-            * Non-covalent fragments used
-        * Preprocess molceules
-            * Generate 3D
-    * Perform docking
-        * Ensemble method
-        * Select most promising compounds
-    * Search for most similar compounds in Enamine REAL space
-        * Using InfiniSee Software; yielded 700 compounds
-    * Postprocessing:
-        * Cross-check with postera submissions
-        * Select diverse subset: 100 compounds (Butina clustering with distance cutoff 0.48, select centroids of 100 largest clusters)
-        * Selection of ~20 candidates
-    * Reevaluate proposed hits
-        * Docking
-    * Submission
-3. [TODO] Growing approach: Start from DiamondX fragments
-    * Screening data: DiamondX fragments
-    * Grow fragments
-    * Search for most similar compounds in Enamine REAL space
-        * Using InfiniSee Software; yielded 600 compounds
-    * Postprocessing:
-        * Cross-check with postera submissions
-        * Select diverse subset: 100 compounds (Butina clustering with distance cutoff 0.3, select centroids of 100 largest clusters)
-        * Selection of ~20 candidates
-    * Reevaluate proposed hits
-        * Docking
-    * Submission
+In the following two strategies for finding new compounds fitting the needs of the challenge are proposed.
+
+Note for setting up the pipeline, 5 known [protease inhibitors](data\proteaseFDAdrugs_3D.sdf) were used as toy examples. Thus, the scripts and notebooks in code might still refer to them.
+
+### Strategy A: Docking
+
+We decided for a rational approach to select our screening compounds. Therefore, similar binding site for COVID-19 main protease were searched (structure-based), and the active compounds for the similar protein were collected from ChEMBL.
+Furthermore, due to time-constraints, the [focused library](code\focused_library_similar_proteins\README.md) was filtered with to keep the compounds having some resemblance with the 22 non-covalent fragments (using MCS).
+
+A representative set of three structures, Mpro-x0387, Mpro-x0946, Mpro-x0967, were then chosen to [run multiple dockings](code\docking\README.md) with the filtered library using the docking program, smina.
+
+[TODO] Final selection.
+
+### Strategy B: Growing
+
+Here a structure-based approach was used for building on the complexes of different fragments bound against the virus main protease available from DiamondX.
+
+As starting point in this example, fragment **Mpro-x0967** was chosen based on its size, its match in our focused library (see [strategy A](../A-focused_library_docking_screening_pipeline/README.md)) and its good estimated affinity using [BioSolveIT's SeeSAR](https://www.biosolveit.de/SeeSAR/)).
+
+[SeeSAR](https://www.biosolveit.de/SeeSAR/) was then used to grow the fragment choosing a bond towards the bromide tail.
+
+To guarantee synthetic accessibility, similar compounds within Enamine [REALspace](https://www.biosolveit.de/CoLibri/spaces.html#realspace) were searched using [FTrees](https://www.biosolveit.de/FTrees/).The found compounds (no duplicates in current postera submissions, 31.03.2020) were cluster to find a diverse subset an the remaining compounds were redocked using SeeSAR.
+
+Based on the fit and the estimated binding affinity the final molecules were selected.
 
 ## Repository structure
 
