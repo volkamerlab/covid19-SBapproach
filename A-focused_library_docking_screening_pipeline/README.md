@@ -11,7 +11,7 @@ Finally, the docking-based screening was applied to the filtered library (see [h
 
 Generate the SARS-CoV-2 focused ChEMBL library. It contains 4121 compounds and can be found [here](https://github.com/volkamerlab/covid19-SBapproach/tree/master/data/focused_library_similar_proteins/focused_library.csv).
 
-### Step 2 ([scripts](https://github.com/volkamerlab/covid19-SBapproach/tree/master/code/focused_library_similar_proteins))
+### Step 2 ([scripts](https://github.com/volkamerlab/covid19-SBapproach/tree/master/notebooks/filter_screeningdeck_by_fragment_similarity.ipynb))
 
 Filter the focused library with the MCS fragment strategy.
 
