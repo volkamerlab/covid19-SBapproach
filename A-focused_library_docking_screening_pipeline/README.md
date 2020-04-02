@@ -79,7 +79,6 @@ Final selection:
 
 *  It's shown that the 7 recommended compounds fit in the binding site.
 
-
 ### Step 4 
 
 Find most similar compounds within Enamine REAL using Ftrees

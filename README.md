@@ -58,8 +58,8 @@ This is part of a community effort to rapidly find new hits to target the virus 
     * [TODO] Search for most similar compounds in Enamine REAL space
         * Using InfiniSee Software
         * Postprocessing (here or later):
-            * Select diverse subset
             * Cross-check with postera submissions
+            * Select diverse subset
             * Selection of ~20 candidates
     * [TODO] Reevaluate proposed hits
         * Docking
@@ -74,10 +74,10 @@ This is part of a community effort to rapidly find new hits to target the virus 
         * Ensemble method
         * Select most promising compounds
     * Search for most similar compounds in Enamine REAL space
-        * Using InfiniSee Software
+        * Using InfiniSee Software; yielded 700 compounds
     * Postprocessing (here or later):
-        * Select diverse subset
         * Cross-check with postera submissions
+        * Select diverse subset: 100 compounds (Butina clustering with distance cutoff 0.48, select centroids of 100 largest clusters)
         * Selection of ~20 candidates
     * Reevaluate proposed hits
         * Docking
@@ -86,9 +86,11 @@ This is part of a community effort to rapidly find new hits to target the virus 
     * Screening data: DiamondX fragments
     * Grow fragments
     * Search for most similar compounds in Enamine REAL space
-        * Using InfiniSee Software
+        * Using InfiniSee Software; yielded 600 compounds
     * Postprocessing (here or later):
-        * as above
+        * Cross-check with postera submissions
+        * Select diverse subset: 100 compounds (Butina clustering with distance cutoff 0.3, select centroids of 100 largest clusters)
+        * Selection of ~20 candidates
     * Reevaluate proposed hits
         * Docking
     * Submission
