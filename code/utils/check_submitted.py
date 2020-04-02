@@ -27,12 +27,17 @@ BASE_URL = r"https://docs.google.com/spreadsheets/d/{key}/gviz/tq?tqx=out:csv"
 SPREADSHEET_ID = "1zELgd-kDEkIjRqc_jdKm5EzDQmRrrYAbErghTPkcA5c"
 
 
-def compounds_from_cli():
+def parse_cli():
     p = argparse.ArgumentParser()
-    p.add_argument("compounds", help="Plain text file with a single SMILES entry per line")
+    p.add_argument(
+        "compounds", help="SDF file or a Plain text file with a single SMILES entry per line"
+    )
 
-    args = p.parse_args()
-    with open(args.compounds) as f:
+    return p.parse_args()
+
+
+def smiles_from_txt(path):
+    with open(path) as f:
         my_compounds = []
         for line in f:
             line = line.strip()
@@ -47,15 +52,43 @@ def currently_submitted():
 
 
 def filter_submitted(candidates, submitted):
-    options = {"allow_undefined_stereo": True}
-    candidates_mols = [
-        Molecule.from_smiles(m, **options)
-        for m in tqdm(candidates, desc="Building molecules for candidates...")
-    ]
+    """
+    Use molecular isomorphism to detect candidate molecules already present in the dataset
+
+    Parameters
+    ----------
+    candidates : list of str or list of openforcefield.topology.Molecule
+        The compounds you want to submit. If list of str, str must be SMILES identifiers
+    submitted : list of str
+        SMILES for all the compounds already present in the target dataset
+
+    Returns
+    -------
+    list of str
+        SMILES for compounds that are NOT present in the dataset
+    """
+    from_smiles_options = {"allow_undefined_stereo": True}
+
+    # First, build Molecule objects for our candidate proposals
+    if isinstance(candidates[0], str):
+        candidates_mols = [
+            Molecule.from_smiles(m, **from_smiles_options)
+            for m in tqdm(candidates, desc="Building molecules for candidates...")
+        ]
+    elif isinstance(candidates[0], Molecule):
+        candidates_mols = candidates
+        candidates = [m.to_smiles() for m in candidates_mols]
+    else:
+        raise ValueError(
+            "Candidates must be a list of SMILES or a list of openforcefield.topology.Molecule objects"
+        )
+
+    # Second build Molecule objects for compounds already submitted to the dataset
     submitted_mols = [
-        Molecule.from_smiles(m, **options)
+        Molecule.from_smiles(m, **from_smiles_options)
         for m in tqdm(submitted, desc="Building molecules for submitted...")
     ]
+
     valid, already_there = [], []
     for candidate_smiles, candidate_mol in tqdm(
         zip(candidates, candidates_mols), desc="Checking isomorphism...", total=len(candidates)
@@ -78,7 +111,12 @@ def filter_submitted(candidates, submitted):
 
 
 def main():
-    my_compounds = compounds_from_cli()
+    args = parse_cli()
+    if args.compounds.endswith(".sdf"):
+        print("Building from SDF...")
+        my_compounds = Molecule.from_file(args.compounds)
+    else:
+        my_compounds = smiles_from_txt(args.compounds)
     already_submitted = currently_submitted()
     return filter_submitted(my_compounds, already_submitted)
 
