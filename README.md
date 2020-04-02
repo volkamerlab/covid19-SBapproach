@@ -4,10 +4,16 @@ powered by: Yonghui Chen, Dominique Sydow, Jaime Rodríguez-Guerra, Andrea Volka
 This is part of a community effort to rapidly find new hits to target the virus main protease.
 
 ### Background
+The COVID-19 (coronavirus disease 2019) pandemic, caused by severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) has become a global health emergency. With no current evidence for specific antiviral treatment, there is an urgent need for effective anti-COVID drugs. A promising target is the main protease M<sup>pro</sup> of SARS-CoV-2 for which the first crystal structure has been determined in January 2020.  UK’sDiamond Light Source performed a large crystal based fragment screen on M<sup>pro</sup>. In collaboration with PostEra and others, they encourage researchers from around the world to use their fragment hits as a starting point and contribute, amongst others, by suggesting potential inhibitors. 
 
+References:
 * https://covid.postera.ai/covid
 * https://www.diamond.ac.uk/covid-19/for-scientists/Main-protease-structure-and-XChem/Downloads.html
-
+* http://www.rcsb.org/structure/6LU7
+* https://sph.nus.edu.sg/wp-content/uploads/2020/03/COVID-19-Science-Report-Therapeutics-30-Mar.pdf
+* Jin, Zhenming, <i>et al.</i> "Structure-based drug design, virtual screening and high-throughput screening rapidly identify antiviral leads targeting COVID-19." bioRxiv (2020).
+* Zhang, Linlin, <i>et al.</i> "Crystal structure of SARS-CoV-2 main protease provides a basis for design of improved α-ketoamide inhibitors." Science (2020).
+* Lai, Chih-Cheng, <i>et al.</i> "Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) and corona virus disease-2019 (COVID-19): the epidemic and the challenges." International journal of antimicrobial agents (2020): 105924.
 ### Available data and methods
 <!-- AV: Clear when done. -->
 <!-- JRG: Summarize in # Resources -->
