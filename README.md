@@ -9,6 +9,8 @@ This is part of a community effort to rapidly find new hits to target the virus 
 * https://www.diamond.ac.uk/covid-19/for-scientists/Main-protease-structure-and-XChem/Downloads.html
 
 ### Available data and methods
+<!-- AV: Clear when done. -->
+<!-- JRG: Summarize in # Resources -->
 
 1. Input data: Collected input molecules for screening pipeline
     * Approved drugs
@@ -42,6 +44,7 @@ This is part of a community effort to rapidly find new hits to target the virus 
         * or use [covid moonshot pipeline](https://github.com/FoldingAtHome/covid-moonshot)
 
 ### Proposed pipelines (one per submission)
+<!-- AV: Clear when done. -->
 
 1. [Trial case to set up pipeline]: Known protease inhibitors
     * Screening data: Protease inhibitors
@@ -89,3 +92,11 @@ This is part of a community effort to rapidly find new hits to target the virus 
     * Reevaluate proposed hits
         * Docking
     * Submission
+
+## Repository structure
+
+<!-- JRG Fill this in -->
+
+## Resources
+
+<!-- AV: List proposed outputs here. -->
