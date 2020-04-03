@@ -79,11 +79,15 @@ Final selection:
 
 *  It's shown that the 7 recommended compounds fit in the binding site.
 
-### Step 4 
+### Step 4
 
 Find most similar compounds within Enamine REAL using Ftrees
 
-* 7 top [molecules](A-focused_library_docking_screening_pipeline\result_data\docking_recommend_7_3D.sdf) itself are used as input
-* A maximum of 100 new compounds per molecule generated as shown [here](A-focused_library_docking_screening_pipeline\ftrees_for_top7_docking_compounds_and_combine_data.ipynb)
-* Resulting [700 molecules](A-focused_library_docking_screening_pipeline\result_data\sminadocking_top7_out_enamineREAL_combined.sdf)
+* 7 top [molecules](result_data/docking_recommend_7_3D.sdf) itself are used as input
+* A maximum of 100 new compounds per molecule generated as shown [here](ftrees_for_top7_docking_compounds_and_combine_data.ipynb)
+* Resulting [700 molecules](result_data/sminadocking_top7_out_enamineREAL_combined.sdf)
+
+### Step 5
+
+Check if any of our candidates have been already submitted to the PostEra challenge. To do that we use [`check_submitted.py`](../code/utils/check_submitted.py), which uses graph isomorphism to test whether any of our candidate molecules are present in the target dataset. In this attempt, there were no matches, so the full set could be used in the following steps.
 
