@@ -15,41 +15,6 @@ References:
 * Lai, Chih-Cheng, _et al._ "Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) and corona virus disease-2019 (COVID-19): the epidemic and the challenges." International journal of antimicrobial agents (2020): 105924. [DOI: `10.1016/j.ijantimicag.2020.105924`](https://www.sciencedirect.com/science/article/pii/S0924857920300674?via%3Dihub)
 
 
-## Available data and methods
-<!-- AV: Clear when done. -->
-<!-- JRG: Summarize in # Resources -->
-
-1. Input data: Collected input molecules for screening pipeline
-    * Approved drugs
-        * [TODO] All
-        * Example data set: [Protease inhibitors](https://github.com/volkamerlab/covid19-SBapproach/blob/master/data/proteaseFDAdrugs.csv) (taken from http://dx.doi.org/10.17179/excli2020-1189)
-    * SARS-CoV-2 focused ChEMBL subset
-        * Binding site comparison based, available [here](https://github.com/volkamerlab/covid19-SBapproach/tree/master/data/focused_library_similar_proteins)
-    * Fragments from [DiamondX](https://www.diamond.ac.uk/covid-19/for-scientists/Main-protease-structure-and-XChem/Downloads.html)
-        * [Non-covalent hits](https://github.com/volkamerlab/covid19-SBapproach/blob/master/data/fragments/non_covalent_fragments_2D.sdf) in the active site
-        * [Covalently-bound hits](https://github.com/volkamerlab/covid19-SBapproach/blob/master/data/fragments/covalent_fragments_2D.sdf) in the active site
-    * Current [postera](https://covid.postera.ai/covid) submissions, available [here](https://github.com/volkamerlab/covid19-SBapproach/blob/master/data/covid_submissions_03_24_2020.xlsx)
-2. Available methods for pipeline
-    * Focused compound library design
-        * Protease binding site definition
-        * Structure-based binding site comparison using [ProBis](http://probis.cmm.ki.si/)
-        * Querying ligands from ChEMBL known to bind to these similar proteins
-        * More info available [here](https://github.com/volkamerlab/covid19-SBapproach/tree/master/code/focused_library_similar_proteins)
-    * Compound preprocessing and filtering
-        * Generate 3D conformations
-        * Filter by similarity to fragments
-        * [TODO] Select divers subset
-        * [TODO] others
-    * Docking
-       * Dock selected compounds to target ensemble using smina
-       * See [Pipeline](https://github.com/volkamerlab/covid19-SBapproach/tree/master/notebooks/Docking).
-    * [TODO] Growing
-      * SeeSAR for DiamondX fragment growing
-    * [TODO] Explore available compounds in REAL space (Availability by Enamine)
-        * InfiniSee search using FTrees in REALspace
-    * [Skip for now] MD simulations to verify docking results
-        * or use [covid moonshot pipeline](https://github.com/FoldingAtHome/covid-moonshot)
-
 ## Proposed pipelines 
 <!-- AV: Clear when done. -->
 
@@ -82,6 +47,33 @@ Based on the fit and the estimated binding affinity the final molecules were sel
 
 <!-- JRG Fill this in -->
 
+
 ## Resources
 
 <!-- AV: List proposed outputs here. -->
+
+## Available data and methods
+<!-- AV: Moved 'Available data and methods' to resources for now, so its out of the way. -->
+<!-- JRG: Summarize in # Resources -->
+
+1. Input data: Collected input molecules for screening pipeline
+    * Approved drugs
+        * Example data set: [Protease inhibitors](https://github.com/volkamerlab/covid19-SBapproach/blob/master/data/proteaseFDAdrugs.csv) (taken from http://dx.doi.org/10.17179/excli2020-1189)
+    * SARS-CoV-2 focused ChEMBL subset
+        * Binding site comparison based, available [here](https://github.com/volkamerlab/covid19-SBapproach/tree/master/data/focused_library_similar_proteins)
+    * Fragments from [DiamondX](https://www.diamond.ac.uk/covid-19/for-scientists/Main-protease-structure-and-XChem/Downloads.html)
+        * [Non-covalent hits](https://github.com/volkamerlab/covid19-SBapproach/blob/master/data/fragments/non_covalent_fragments_2D.sdf) in the active site
+        * [Covalently-bound hits](https://github.com/volkamerlab/covid19-SBapproach/blob/master/data/fragments/covalent_fragments_2D.sdf) in the active site
+    * Current [postera](https://covid.postera.ai/covid) submissions, available [here](https://github.com/volkamerlab/covid19-SBapproach/blob/master/data/covid_submissions_03_24_2020.xlsx)
+2. Available methods for pipeline
+    * [Focused compound library design](https://github.com/volkamerlab/covid19-SBapproach/tree/master/code/focused_library_similar_proteins)
+        * Structure-based binding site comparison using [ProBis](http://probis.cmm.ki.si/)
+        * Querying ligands from ChEMBL known to bind to these similar proteins
+    * Compound preprocessing and filtering
+        * Generate 3D conformations
+        * Filter by similarity to fragments
+        * Select divers subset
+    * [Docking](https://github.com/volkamerlab/covid19-SBapproach/tree/master/notebooks/Docking): Dock selected compounds to target ensemble using smina
+    * Growing: SeeSAR for DiamondX fragment growing
+    * Ftrees: Explore available compounds in REAL space (Availability by Enamine)
+
