@@ -1,6 +1,6 @@
 # Fight SARS-CoV-2 strategy for postera contribution (started 25.03.2020)
 
-_Powered by: Yonghui Chen, Dominique Sydow, Jaime Rodríguez-Guerra, Andrea Volkamer (`<andrea.volkamer@charite.de>`)_
+_Powered by: [Volkamer lab](http://volkamerlab.org/)_
 
 This is part of a community effort to rapidly find new hits to target the virus main protease.
 
@@ -77,3 +77,5 @@ Based on the fit and the estimated binding affinity the final molecules were sel
     * Growing: SeeSAR for DiamondX fragment growing
     * Ftrees: Explore available compounds in REAL space (Availability by Enamine)
 
+#### Main contributors:
+_Yonghui Chen, Dominique Sydow, Jaime Rodríguez-Guerra, Andrea Morger and Andrea Volkamer_ 
