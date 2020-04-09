@@ -5,8 +5,8 @@ _Powered by: [Volkamer lab](http://volkamerlab.org/)_
 This is part of a community effort to rapidly find new hits to target the virus main protease.
 
 ## Background
-The COVID-19 (coronavirus disease 2019) pandemic, caused by severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) has become a global health emergency. With no current evidence for specific antiviral treatment, there is an urgent need for effective anti-COVID drugs ([more about potential drugs and clinical trials in the COVID-19 Science Report: Therapeutics](https://sph.nus.edu.sg/wp-content/uploads/2020/03/COVID-19-Science-Report-Therapeutics-30-Mar.pdf)). A promising target is the main protease M<sup>pro</sup> of SARS-CoV-2 for which the first [crystal structure](http://www.rcsb.org/structure/6LU7) has been determined in January 2020.  
-[UK’s Diamond Light Source](https://www.diamond.ac.uk/covid-19/for-scientists/Main-protease-structure-and-XChem/Downloads.html) performed a large crystal-based fragment screen on M<sup>pro</sup>. In collaboration with [PostEra](https://covid.postera.ai/covid) and others, they encourage researchers from around the world to use their fragment hits as a starting point and contribute, amongst others, by suggesting potential inhibitors (effective and easy-to-make). 
+The COVID-19 (coronavirus disease 2019) pandemic, caused by severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) has become a global health emergency. With no current evidence for specific antiviral treatment, there is an urgent need for effective anti-COVID drugs ([more about potential drugs and clinical trials in the COVID-19 Science Report: Therapeutics](https://sph.nus.edu.sg/wp-content/uploads/2020/03/COVID-19-Science-Report-Therapeutics-30-Mar.pdf)). A promising target is the main protease M<sup>pro</sup> of SARS-CoV-2 for which the first [crystal structure](http://www.rcsb.org/structure/6LU7) has been determined in January 2020.
+[UK’s Diamond Light Source](https://www.diamond.ac.uk/covid-19/for-scientists/Main-protease-structure-and-XChem/Downloads.html) performed a large crystal-based fragment screen on M<sup>pro</sup>. In collaboration with [PostEra](https://covid.postera.ai/covid) and others, they encourage researchers from around the world to use their fragment hits as a starting point and contribute, amongst others, by suggesting potential inhibitors (effective and easy-to-make).
 
 References:
 
@@ -15,19 +15,19 @@ References:
 * Lai, Chih-Cheng, _et al._ "Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) and corona virus disease-2019 (COVID-19): the epidemic and the challenges." International journal of antimicrobial agents (2020): 105924. [DOI: `10.1016/j.ijantimicag.2020.105924`](https://www.sciencedirect.com/science/article/pii/S0924857920300674?via%3Dihub)
 
 
-## Proposed pipelines 
+## Proposed pipelines
 <!-- AV: Clear when done. -->
 
 In the following two strategies for finding new compounds fitting the needs of the challenge are proposed.
 
-Note for setting up the pipeline, 5 known [protease inhibitors](data\proteaseFDAdrugs_3D.sdf) were used as toy examples. Thus, the scripts and notebooks in code might still refer to them.
+Note for setting up the pipeline, 5 known [protease inhibitors](data/proteaseFDAdrugs_3D.sdf) were used as toy examples. Thus, the scripts and notebooks in code might still refer to them.
 
 ### Strategy A: Docking
 
 We decided for a rational approach to select our screening compounds. Therefore, similar binding site for COVID-19 main protease were searched (structure-based), and the active compounds for the similar protein were collected from ChEMBL.
-Furthermore, due to time-constraints, the [focused library](code\focused_library_similar_proteins\README.md) was filtered with to keep the compounds having some resemblance with the 22 non-covalent fragments (using MCS).
+Furthermore, due to time-constraints, the [focused library](code/focused_library_similar_proteins/README.md) was filtered with to keep the compounds having some resemblance with the 22 non-covalent fragments (using MCS).
 
-A representative set of three structures, Mpro-x0387, Mpro-x0946, Mpro-x0967, were then chosen to [run multiple dockings](code\docking\README.md) with the filtered library using the docking program, smina.
+A representative set of three structures, Mpro-x0387, Mpro-x0946, Mpro-x0967, were then chosen to [run multiple dockings](code/docking/README.md) with the filtered library using the docking program, smina.
 
 [TODO] Final selection.
 
@@ -35,7 +35,7 @@ A representative set of three structures, Mpro-x0387, Mpro-x0946, Mpro-x0967, we
 
 Here a structure-based approach was used for building on the complexes of different fragments bound against the virus main protease available from DiamondX.
 
-As starting point in this example, fragment **Mpro-x0967** was chosen based on its size, its match in our focused library (see [strategy A](../A-focused_library_docking_screening_pipeline/README.md)) and its good estimated affinity using [BioSolveIT's SeeSAR](https://www.biosolveit.de/SeeSAR/)).
+As starting point in this example, fragment **Mpro-x0967** was chosen based on its size, its match in our focused library (see [strategy A](A-focused_library_docking_screening_pipeline/README.md)) and its good estimated affinity using [BioSolveIT's SeeSAR](https://www.biosolveit.de/SeeSAR/)).
 
 [SeeSAR](https://www.biosolveit.de/SeeSAR/) was then used to grow the fragment choosing a bond towards the bromide tail.
 
@@ -45,7 +45,12 @@ Based on the fit and the estimated binding affinity the final molecules were sel
 
 ## Repository structure
 
-<!-- JRG Fill this in -->
+- `A-focused_library_docking_screening_pipeline/` contains the results for our strategy A.
+- `B-fragment_growing_pipeline/` contains the results for the strategy B.
+- `code/`: scripts developed to support the obtention of results in both strategies.
+- `data/`: raw data that either taken as input in the strategies, or a byproduct of the pipeline.
+- `devtools/`: metadata files to reproduce the development environment the strategies needed.
+- `notebooks/`: exploratory analysis that was finally consolidated into `code/`
 
 
 ## Resources
@@ -77,5 +82,6 @@ Based on the fit and the estimated binding affinity the final molecules were sel
     * Growing: SeeSAR for DiamondX fragment growing
     * Ftrees: Explore available compounds in REAL space (Availability by Enamine)
 
-#### Main contributors:
-_Yonghui Chen, Dominique Sydow, Jaime Rodríguez-Guerra, Andrea Morger and Andrea Volkamer_ 
+#### Main contributors
+
+_Yonghui Chen, Dominique Sydow, Jaime Rodríguez-Guerra, Andrea Morger and Andrea Volkamer_
