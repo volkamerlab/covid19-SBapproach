@@ -16,7 +16,6 @@ References:
 
 
 ## Proposed pipelines
-<!-- AV: Clear when done. -->
 
 In the following two strategies for finding new compounds fitting the needs of the challenge are proposed.
 
@@ -24,12 +23,20 @@ Note for setting up the pipeline, 5 known [protease inhibitors](data/proteaseFDA
 
 ### Strategy A: Docking
 
-We decided for a rational approach to select our screening compounds. Therefore, similar binding site for COVID-19 main protease were searched (structure-based), and the active compounds for the similar protein were collected from ChEMBL.
+A rational structure-based approach to select screening compounds was investigated. Therefore, similar binding site for COVID-19 main protease were searched (structure-based, using [ProBis](http://probis.cmm.ki.si/)), and the active compounds for the similar protein were collected from [ChEMBL](https://www.ebi.ac.uk/chembl/).
 Furthermore, due to time-constraints, the [focused library](code/focused_library_similar_proteins/README.md) was filtered with to keep the compounds having some resemblance with the 22 non-covalent fragments (using MCS).
 
 A representative set of three structures, Mpro-x0387, Mpro-x0946, Mpro-x0967, were then chosen to [run multiple dockings](code/docking/README.md) with the filtered library using the docking program, smina.
 
-[TODO] Final selection.
+Based on the docking scores, toxicity criteria (trying to avoid respiratory toxicity using estimations from [eMolTox](http://xundrug.cn/moltox) webserver) and after visual inspection these compounds were selected (ChEMBL IDs)
+* CHEMBL3937948
+* CHEMBL2059095
+* CHEMBL3690047
+* CHEMBL1684519 
+
+![alt text](A-focused_library_docking_screening_pipeline\img\submission.png "submission A")
+
+Note that similar molecules are available in Enamine REAL, such a selection could be added here later (time restriction for now, pipeline available, see strategy B). 
 
 ### Strategy B: Growing
 
@@ -43,44 +50,45 @@ To guarantee synthetic accessibility, similar compounds within Enamine [REALspac
 
 Based on the fit and the estimated binding affinity the final molecules were selected.
 
+![alt text](B-fragment_growing_pipeline/img/submission.png "submission A")
+
 ## Repository structure
 
 - `A-focused_library_docking_screening_pipeline/` contains the results for our strategy A.
 - `B-fragment_growing_pipeline/` contains the results for the strategy B.
-- `code/`: scripts developed to support the obtention of results in both strategies.
-- `data/`: raw data that either taken as input in the strategies, or a byproduct of the pipeline.
+- `code/`: scripts and notebooks developed to support obtaining the results in both strategies.
+- `data/`: raw data that either can be taken as input in the strategies, or are a byproduct of the pipeline.
 - `devtools/`: metadata files to reproduce the development environment the strategies needed.
-- `notebooks/`: exploratory analysis that was finally consolidated into `code/`
 
 
 ## Resources
 
 <!-- AV: List proposed outputs here. -->
 
-## Available data and methods
+### Available data and methods
 <!-- AV: Moved 'Available data and methods' to resources for now, so its out of the way. -->
 <!-- JRG: Summarize in # Resources -->
 
 1. Input data: Collected input molecules for screening pipeline
-    * Approved drugs
-        * Example data set: [Protease inhibitors](https://github.com/volkamerlab/covid19-SBapproach/blob/master/data/proteaseFDAdrugs.csv) (taken from http://dx.doi.org/10.17179/excli2020-1189)
-    * SARS-CoV-2 focused ChEMBL subset
-        * Binding site comparison based, available [here](https://github.com/volkamerlab/covid19-SBapproach/tree/master/data/focused_library_similar_proteins)
+    * Approved [protease inhibitors](https://github.com/volkamerlab/covid19-SBapproach/blob/master/data/proteaseFDAdrugs.csv) (taken from http://dx.doi.org/10.17179/excli2020-1189)
+    * SARS-CoV-2 [main protease focused ChEMBL subset](https://github.com/volkamerlab/covid19-SBapproach/tree/master/data/focused_library_similar_proteins) using binding site comparison
     * Fragments from [DiamondX](https://www.diamond.ac.uk/covid-19/for-scientists/Main-protease-structure-and-XChem/Downloads.html)
-        * [Non-covalent hits](https://github.com/volkamerlab/covid19-SBapproach/blob/master/data/fragments/non_covalent_fragments_2D.sdf) in the active site
-        * [Covalently-bound hits](https://github.com/volkamerlab/covid19-SBapproach/blob/master/data/fragments/covalent_fragments_2D.sdf) in the active site
-    * Current [postera](https://covid.postera.ai/covid) submissions, available [here](https://github.com/volkamerlab/covid19-SBapproach/blob/master/data/covid_submissions_03_24_2020.xlsx)
-2. Available methods for pipeline
-    * [Focused compound library design](https://github.com/volkamerlab/covid19-SBapproach/tree/master/code/focused_library_similar_proteins)
+        * [Non-covalent hits](data/fragments/non_covalent_fragments_2D.sdf) in the active site
+        * [Covalently-bound hits](data/fragments/covalent_fragments_2D.sdf) in the active site
+    * Current [postera](https://covid.postera.ai/covid) submissions ([24 march 2020 version](data/covid_submissions_03_24_2020.xlsx))
+2. Scripts and methods used for the pipelines
+    * [Main protease focused ChEMBL subset](code/focused_library_similar_proteins/README.md)
         * Structure-based binding site comparison using [ProBis](http://probis.cmm.ki.si/)
-        * Querying ligands from ChEMBL known to bind to these similar proteins
-    * Compound preprocessing and filtering
-        * Generate 3D conformations
-        * Filter by similarity to fragments
-        * Select divers subset
-    * [Docking](https://github.com/volkamerlab/covid19-SBapproach/tree/master/notebooks/Docking): Dock selected compounds to target ensemble using smina
-    * Growing: SeeSAR for DiamondX fragment growing
-    * Ftrees: Explore available compounds in REAL space (Availability by Enamine)
+        * Querying ligands from [ChEMBL](https://www.ebi.ac.uk/chembl/) known to bind to these similar proteins
+    * Scripts for compound preprocessing and filtering
+        * `code/utils/`: compound preprocessing 
+        * Notebooks to:
+            * Generate [3D conformations](code/generate_3d_coordinates.ipynb)
+            * Filter by [similarity to fragments](code/filter_screeningdeck_by_fragment_similarity.ipynb)
+            * Select [divers subset](code/compound_clustering/compound_clustering.ipynb)
+    * [Docking](code/docking/README.md): Dock selected compounds to target ensemble using [smina](https://sourceforge.net/projects/smina)
+    * DiamondX fragment growing
+    *   [Ftrees](code/ftrees/README.md): Explore available compounds in REAL space (Availability by Enamine)
 
 #### Main contributors
 
