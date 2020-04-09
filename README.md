@@ -34,7 +34,7 @@ Based on the docking scores, toxicity criteria (trying to avoid respiratory toxi
 * CHEMBL3690047
 * CHEMBL1684519 
 
-![alt text](A-focused_library_docking_screening_pipeline\img\submission.png "submission A")
+![alt text](A-focused_library_docking_screening_pipeline/img/submission.png "submission A")
 
 Note that similar molecules are available in Enamine REAL, such a selection could be added here later (time restriction for now, pipeline available, see strategy B). 
 
