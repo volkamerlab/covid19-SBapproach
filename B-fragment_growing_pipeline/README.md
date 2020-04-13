@@ -51,7 +51,13 @@ First, a fragment will be selected and second it will be grown. Next, the pipeli
 
 ### Step 6. Collect info for submission
 
-* Provide Smiles/structures: see [sdf file] [TODO]
+* Smiles of selected compounds:  
+    1. C=C(CC)COC(=O)C(Cc1ccc(O)cc1)NC(=O)CC(C)C
+    2. CC(=O)NC(Cc1ccc(O)cc1)C(=O)NOCC(F)(F)C(F)F
+    3. CC(=O)NC(Cc1ccc(O)cc1)C(=O)N(C)c1nccs1
+    4. CC(=O)NC(Cc1ccc(O)cc1)C(=O)NC(C)CN1CCCC1
+    5. CC(=O)NC(Cc1ccc(O)cc1)c1nnc(C(C)C)o1
+
 * Describe rationale:
 
     Here a structure-based approach was used for building on the complexes of different fragments bound against the virus main protease available from DiamondX.
